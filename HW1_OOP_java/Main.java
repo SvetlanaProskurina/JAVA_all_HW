@@ -14,19 +14,23 @@ public class Main {
 
 
   public static void main(String[] args) {
-    HotDrink cocoa = new Cocoa("какао","шоколад",300,65, 200);
-    HotDrink greenTea = new Tea("чай","зеленый", 300, 70, 150);
-    HotDrink blackTea = new Tea("чай","черный", 300, 80, 150);
-    HotDrink cappuccino = new Cofee("кофе","капучино", 300, 65,250);
-    HotDrink espresso = new Cofee("кофе","эспрессо", 100, 65,220);
+    Cocoa cocoa = new Cocoa("какао","шоколад",300,65, 200);
+    Tea greenTea = new Tea("чай","зеленый", 300, 70, 150);
+    Tea blackTea = new Tea("чай","черный", 300, 80, 150);
+    Tea blackTeaCold = new Tea("чай","черный", 300, 30, 150);
+    Cofee cappuccino = new Cofee("кофе","капучино", 300, 65,250);
+    Cofee espresso = new Cofee("кофе","эспрессо", 100, 65,220);
     AutomatHotDrinks autoHotDrinks = new AutomatHotDrinks();
     autoHotDrinks.addHotDrinks(cocoa);
     autoHotDrinks.addHotDrinks(greenTea);
     autoHotDrinks.addHotDrinks(blackTea);
     autoHotDrinks.addHotDrinks(cappuccino);
     autoHotDrinks.addHotDrinks(espresso);
+    autoHotDrinks.addHotDrinks(blackTeaCold);
 
+    System.out.println("Выберите горячий напиток из перечисленных: \n");
     System.out.println(autoHotDrinks.getHotDrinks());
-    autoHotDrinks.buyHotDrink();
+ //   autoHotDrinks.buyHotDrink();
+    autoHotDrinks.getProduct();
   }
 }

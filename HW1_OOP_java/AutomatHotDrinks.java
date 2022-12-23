@@ -36,6 +36,66 @@ public class AutomatHotDrinks implements VendingAutomat{
     System.out.println("Идет выдача сдачи");
   }
 
+  // выбор по 4 параметрам
+  public void getProduct() {
+    Scanner scan = new Scanner(System.in);
+
+    System.out.print("Введите название напитка: ");
+    String name = scan.nextLine();
+    System.out.print("Введите тип напитка: ");
+    String type = scan.nextLine();
+    System.out.print("Введите объем напитка:");
+    Integer volume = Integer.parseInt(scan.nextLine());
+    System.out.print("Введите температуру напитка:");
+    Integer temp = Integer.parseInt(scan.nextLine());
+    HotDrink HD = new HotDrink("", "", 0, 0);
+
+    for (HotDrink hotdrink : hotDrinks) {
+      if (hotdrink instanceof Cocoa) {
+        Cocoa hotdrink1 = (Cocoa) hotdrink;
+        if (hotdrink1.getName().equalsIgnoreCase(name) && hotdrink1.getType()
+            .equalsIgnoreCase(type) && hotdrink1.getSize().equals(volume)
+            && hotdrink1.getTemperature().equals(temp)) {
+          System.out.print(hotdrink1);
+          HD = hotdrink1;
+        }
+      } else if (hotdrink instanceof Tea) {
+        Tea hotdrink2 = (Tea) hotdrink;
+        if (hotdrink2.getName().equalsIgnoreCase(name) && hotdrink2.getType()
+            .equalsIgnoreCase(type) && hotdrink2.getSize().equals(volume)
+            && hotdrink2.getTemperature().equals(temp)) {
+          System.out.print(hotdrink2);
+          HD = hotdrink2;
+        }
+      } else if (hotdrink instanceof Cofee) {
+        Cofee hotdrink3 = (Cofee) hotdrink;
+        if (hotdrink3.getName().equalsIgnoreCase(name) && hotdrink3.getType()
+            .equalsIgnoreCase(type) && hotdrink3.getSize().equals(volume)
+            && hotdrink3.getTemperature().equals(temp)) {
+          System.out.print(hotdrink3);
+          HD = hotdrink3;
+        }
+      }
+    }
+      System.out.printf("Стоимость товара: %d", HD.getPrice());
+      System.out.println("\n Ожиданиие суммы");
+      Integer money = Integer.parseInt(scan.nextLine());
+      if (money >= HD.getPrice()) {
+        moneyAccept();
+        System.out.printf("Вот ваш напиток %s \n", HD.getName());
+        goodsDelivery();
+        int change = money - HD.getPrice();
+        if (change > 0) {
+          change();
+          System.out.printf("Возьмите вашу сдачу %d", change);
+        }
+      } else {
+        moneyAccept();
+        System.out.printf("Средств недостаточно для покупки %s", HD.getName());
+      }
+
+  }
+  // выбор по двум параметрам
   public void buyHotDrink(){
     Scanner scan = new Scanner(System.in);
     System.out.println("Выберите горячий напиток из перечисленных: \n");

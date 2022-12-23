@@ -1,3 +1,5 @@
+import java.util.stream.Stream;
+
 public class HotDrink {
 
   protected String name;
@@ -11,26 +13,26 @@ public class HotDrink {
    * @param size  : объем
    * @param price : цена
    */
-  public HotDrink(String name, String type,int size, int price){
+  public HotDrink(String name, String type, int size, int price) {
     this.name = name;
     this.type = type;
     this.size = size;
     this.price = price;
   }
 
-  public String getName(){
+  public String getName() {
     return name;
   }
 
-  public String getType(){
+  public String getType() {
     return type;
   }
 
-  public Integer getSize(){
+  public Integer getSize() {
     return size;
   }
 
-  public Integer getPrice(){
+  public Integer getPrice() {
     return price;
   }
 
@@ -49,5 +51,9 @@ public class HotDrink {
 
   public void setPrice(int price) {
     this.size = price;
+  }
+
+  public boolean isNullAllFields() {
+    return Stream.of(this.getClass().getDeclaredFields()).anyMatch(element -> (element != null));
   }
 }
