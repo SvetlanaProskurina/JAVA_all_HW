@@ -20,7 +20,7 @@ public class Main {
     AttendanceService as = new AttendanceService();
     AttendanceView av = new AttendanceView();
 
-    presenter test = new presenter(as, av);
+    Presenter pr = new Presenter(as, av);
 
     List att1 = new ArrayList<>();
     att1.add(new Attendance(LocalDate.of(2023, 01, 11), false));
@@ -48,7 +48,7 @@ public class Main {
     as.addUser(student2);
     as.addUser(student3);
 
-    test.buttonClick();
+    pr.buttonClick();
 
   }
 

@@ -9,18 +9,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class presenter {
+public class Presenter {
 
   AttendanceService attendanceService;
   AttendanceView attendanceView;
 
-  public presenter(AttendanceService attendanceService, AttendanceView attendanceView) {
+  public Presenter(AttendanceService attendanceService, AttendanceView attendanceView) {
     this.attendanceService = attendanceService;
     this.attendanceView = attendanceView;
   }
 
   public void buttonClick() {
-    int number = attendanceView.getValue();
+    int number = attendanceView.getActionNumber();
     if (number == 1) {
       attendanceView.PrintListAttendance(attendanceService);
     }else if (number == 2) {

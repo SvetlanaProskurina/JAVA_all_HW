@@ -13,10 +13,10 @@ public class AttendanceView {
   //  private List<Student> studentsList = new ArrayList<>();
   Scanner in = new Scanner(System.in);
 
-  public Integer getValue() {
-    System.out.println("Выберите действие:\n 1. Распечатать всех студентов и посещаемость каждого в процентах \n "+
-            "2. Распечатать студентов, отсортировав их по убыванию посещаемости (вверху самые посещающие) \n "+
-            "3. Распечатать студентов с посещаемостью ниже 25% \n");
+  public Integer getActionNumber() {
+    System.out.println("Выберите действие:\n 1 - Распечатать всех студентов и посещаемость каждого в процентах \n "+
+            "2 - Распечатать студентов, отсортировав их по убыванию посещаемости (вверху самые посещающие) \n "+
+            "3 - Распечатать студентов с посещаемостью ниже 25% \n");
     return Integer.parseInt(in.next());
   }
 
