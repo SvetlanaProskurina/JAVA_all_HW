@@ -2,14 +2,27 @@ package OOP_HW6.task2;
 
 //import OOP_HW6.task1.BasePhone;
 
-public class Main {
-  public static void main(String[] args){
-//    UnlockerModeList test = new UnlockerModeList(Arrays.asList(new UnlockerFree(),
-//        new UnlockerFaceID(), new UnlockerFingerprint(), new UnlockerPin()));
-//    BasePhone basePhone = new BasePhone(test.getModeList());
-//    basePhone.toString();
-//    Scanner in = new Scanner(System.in);
-//    System.out.println("Введите");
+import java.util.ArrayList;
+import java.util.Arrays;
 
+public class Main {
+
+  public static void main(String[] args) {
+
+    ImmutableList<Integer> integerImmutableList = new ImmutableList<>();
+    integerImmutableList.collectionList = new ArrayList<>(Arrays.asList(1, 2, 3));
+    integerImmutableList.getSize();
+    integerImmutableList.get(0);
+
+    MutableList<Integer> integerMutableList = new MutableList<>();
+    integerMutableList.collectionList = new ArrayList<>(Arrays.asList(1, 2, 3));
+    integerMutableList.add(4);
+    integerMutableList.print();
+    System.out.println();
+    integerMutableList.remove(2);
+    integerMutableList.print();
+    System.out.println();
+    integerMutableList.set(2, 78);
+    integerMutableList.print();
   }
 }

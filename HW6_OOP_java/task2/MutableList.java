@@ -8,26 +8,32 @@ public class MutableList<T> extends Collection<Integer> {
   public MutableList() {
     this.collectionList = new ArrayList<>();
   }
-  public void set(int i, int val) {
+  public void set(int i, int newVal) {
 
-    collectionList.add(val);
+    collectionList.set(i,newVal);
   }
 
-  public void add(int val) {
-    collectionList.add(val);
+  public void add(int newVal) {
+    collectionList.add(newVal);
   }
 
-  public void remove(int val) {
-    collectionList.remove(val);
+  public void remove(int i) {
+    collectionList.remove(i);
   }
 
   @Override
   public void getSize() {
-    System.out.println(collectionList.size());
+    collectionList.size();
   }
 
   @Override
   public void get(int i) {
     System.out.println(collectionList.get(i));
+  }
+
+
+  public void print() {
+    for (Integer in : collectionList){
+      System.out.print(in + " ");}
   }
 }
