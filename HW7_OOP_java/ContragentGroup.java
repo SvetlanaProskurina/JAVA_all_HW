@@ -14,7 +14,9 @@ public class ContragentGroup implements Iterable<Contragent> {
   public Contragent get(int index) {
     return contragents.get(index);
   }
-
+public void add(Contragent contragent){
+    contragents.add(contragent);
+}
 //  public void delete(){
 //    contragents.remove(contragents.get())
 //  }

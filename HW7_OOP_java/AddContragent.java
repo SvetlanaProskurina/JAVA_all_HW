@@ -68,7 +68,7 @@ public class AddContragent {
           }
         } while (input < 6);
         System.out.println("Вы добавили " + human);
-
+        contragents.add(human);
       }
     }else {
         System.out.println("Введите название компании:");
@@ -120,6 +120,7 @@ public class AddContragent {
             }
           } while (input < 6);
           System.out.println("Вы добавили " + company);
+          contragents.add(company);
         }
 
       }
